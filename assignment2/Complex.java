@@ -43,8 +43,8 @@ class ComplexOperations{
         return new ComplexOperations(real, image);
     }
     ComplexOperations divide(ComplexOperations other){
-        double real = ((this.real * other.real) + (this.image * other.image)) / ((other.real * other.real) + (other.image * other.image));
-        double image = ((this.real * other.image) - (this.image * other.real)) / ((other.real * other.real) + (other.image * other.image));
+        double real = ((this.real * other.real) + (this.image * other.image)) / ((this.real * this.real) + (this.image * this.image));
+        double image = ((this.real * other.image) - (this.image * other.real)) / ((this.real * this.real) + (this.image * this.image));
         return new ComplexOperations(real, image);
     }
     ComplexOperations inverse(){
@@ -52,4 +52,5 @@ class ComplexOperations{
         double image = this.image / ((this.real * this.real) + (this.image * this.image));
         return new ComplexOperations(real, image);
     }
+
 }
